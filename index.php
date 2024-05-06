@@ -46,10 +46,10 @@
         $hotel = $hotels[$i];
         $name = $hotel['name'];
         $description = $hotel['description'];
-        $parking = $hotel['parking'];
+        $parking = $hotel['parking'] === true ? 'Sì' : 'No';
         $vote = $hotel['vote'];
         $distance = $hotel['distance_to_center'];
-        $hotel_info = "$name <br> $description <br> $parking <br> $vote <br> $distance";
+        $hotel_info = "Nome: $name <br> Descrizione: $description <br> Parcheggio riservato: $parking <br> Stelle: $vote <br> Distanza dal centro: $distance Km";
         ?>
         <p>
             <?php echo $hotel_info; ?>
