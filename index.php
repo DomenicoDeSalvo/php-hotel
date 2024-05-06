@@ -1,4 +1,4 @@
-<!-- PHP -->
+<!-- ARRAY DI HOTEL -->
 <?php
 
     $hotels = [
@@ -41,6 +41,22 @@
 
     ];
 
+    //CICLO FOR HOTEL
+    for($i = 0; $i < count($hotels); $i++){
+        $hotel = $hotels[$i];
+        $name = $hotel['name'];
+        $description = $hotel['description'];
+        $parking = $hotel['parking'];
+        $vote = $hotel['vote'];
+        $distance = $hotel['distance_to_center'];
+        $hotel_info = "$name <br> $description <br> $parking <br> $vote <br> $distance";
+        ?>
+        <p>
+            <?php echo $hotel_info; ?>
+        </p>
+        <?php
+    };
+
 ?>
 <!-- HTML -->
 <!DOCTYPE html>
@@ -51,6 +67,5 @@
         <title>PHP Hotel</title>
     </head>
     <body>
-        
     </body>
 </html>
