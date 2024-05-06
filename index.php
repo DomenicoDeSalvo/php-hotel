@@ -53,39 +53,47 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Descrizione</th>
-                    <th scope="col">Parcheggio</th>
-                    <th scope="col">Stelle</th>
-                    <th scope="col">Distanza dal Centro (Km)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    //CICLO FOR HOTEL
-                    for($i = 0; $i < count($hotels); $i++){
-                        $hotel = $hotels[$i];
-                        $name = $hotel['name'];
-                        $description = $hotel['description'];
-                        $parking = $hotel['parking'] === true ? 'Sì' : 'No';
-                        $vote = $hotel['vote'];
-                        $distance = $hotel['distance_to_center'];
-                        ?> 
+
+        <!-- TABELLA HOTEL -->
+        <main>
+            <section>
+                <div class="container">
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td> <?php echo $name; ?></td>
-                                <td> <?php echo $description; ?></td>
-                                <td> <?php echo $parking; ?></td>
-                                <td> <?php echo $vote; ?></td>
-                                <td> <?php echo $distance; ?></td>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Descrizione</th>
+                                <th scope="col">Parcheggio</th>
+                                <th scope="col">Stelle</th>
+                                <th scope="col">Distanza dal Centro (Km)</th>
                             </tr>
+                        </thead>
+                        <tbody>
                         <?php
-                    };
-                    ?>
-            </tbody>
-        </table>
+                            //CICLO FOR HOTEL
+                            for($i = 0; $i < count($hotels); $i++){
+                                $hotel = $hotels[$i];
+                                $name = $hotel['name'];
+                                $description = $hotel['description'];
+                                $parking = $hotel['parking'] === true ? 'Sì' : 'No';
+                                $vote = $hotel['vote'];
+                                $distance = $hotel['distance_to_center'];
+                        ?> 
+                                <tr>
+                                    <td> <?php echo $name; ?></td>
+                                    <td> <?php echo $description; ?></td>
+                                    <td> <?php echo $parking; ?></td>
+                                    <td> <?php echo $vote; ?></td>
+                                    <td> <?php echo $distance; ?></td>
+                                </tr>
+                        <?php
+                            };
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
         <!-- BOOTSTRAP JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
