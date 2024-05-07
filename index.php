@@ -41,7 +41,6 @@
 
     ];
 
-
 ?>
 <!-- HTML -->
 <!DOCTYPE html>
@@ -54,8 +53,20 @@
     </head>
     <body>
 
-        <!-- TABELLA HOTEL -->
         <main>
+            <!-- FORM -->
+            <section>
+                <div class="container">
+                    <form action="">
+                        <div>
+                            <label for="stars">Stelle</label>
+                            <input type="text" name="stars" placeholder="Stelle minime">
+                            <button>cerca</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- TABELLA HOTEL -->
             <section>
                 <div class="container">
                     <table class="table">
@@ -71,21 +82,16 @@
                         <tbody>
                         <?php
                             //CICLO FOR HOTEL
-                            for($i = 0; $i < count($hotels); $i++){
-                                $hotel = $hotels[$i];
-                                $name = $hotel['name'];
-                                $description = $hotel['description'];
-                                $parking = $hotel['parking'] === true ? 'Sì' : 'No';
-                                $vote = $hotel['vote'];
-                                $distance = $hotel['distance_to_center'];
+                            foreach($hotels as $hotel){
+
                         ?> 
-                                <tr>
-                                    <td> <?php echo $name; ?></td>
-                                    <td> <?php echo $description; ?></td>
-                                    <td> <?php echo $parking; ?></td>
-                                    <td> <?php echo $vote; ?></td>
-                                    <td> <?php echo $distance; ?></td>
-                                </tr>
+                            <tr>
+                                <td> <?= $hotel['name']; ?></td>
+                                <td> <?= $hotel['description']; ?></td>
+                                <td> <?= $hotel['parking'] === true ? 'Sì' : 'No'; ?></td>
+                                <td> <?= $hotel['vote']; ?></td>
+                                <td> <?= $hotel['distance_to_center']; ?></td>
+                            </tr>
                         <?php
                             };
                         ?>
